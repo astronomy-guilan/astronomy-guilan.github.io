@@ -3,6 +3,7 @@ import '@fontsource/vazirmatn/400.css';
 import '@fontsource/vazirmatn/600.css';
 import '@fontsource/vazirmatn/800.css';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 const { title, description = 'انجمن نجوم دانشگاه گیلان' } = Astro.props;
 const fullTitle = title ? `${title} | انجمن نجوم دانشگاه گیلان` : 'انجمن نجوم دانشگاه گیلان';
@@ -19,6 +20,7 @@ const fullTitle = title ? `${title} | انجمن نجوم دانشگاه گیل�
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
 
@@ -34,9 +36,15 @@ const fullTitle = title ? `${title} | انجمن نجوم دانشگاه گیل�
   }
   body {
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: 'Vazirmatn', sans-serif;
     background: var(--bg);
     color: var(--text);
+  }
+  main {
+    flex: 1;
   }
   a { color: var(--accent); text-decoration: none; }
 </style>
