@@ -2,6 +2,7 @@
 import '@fontsource/vazirmatn/400.css';
 import '@fontsource/vazirmatn/600.css';
 import '@fontsource/vazirmatn/800.css';
+import Header from '../components/Header.astro';
 
 const { title, description = 'انجمن نجوم دانشگاه گیلان' } = Astro.props;
 const fullTitle = title ? `${title} | انجمن نجوم دانشگاه گیلان` : 'انجمن نجوم دانشگاه گیلان';
@@ -14,7 +15,10 @@ const fullTitle = title ? `${title} | انجمن نجوم دانشگاه گیل�
     <title>{fullTitle}</title>
   </head>
   <body>
-    <slot />
+    <Header />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
 
