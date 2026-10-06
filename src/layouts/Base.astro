@@ -1,0 +1,38 @@
+---
+import '@fontsource/vazirmatn/400.css';
+import '@fontsource/vazirmatn/600.css';
+import '@fontsource/vazirmatn/800.css';
+
+const { title, description = 'انجمن نجوم دانشگاه گیلان' } = Astro.props;
+const fullTitle = title ? `${title} | انجمن نجوم دانشگاه گیلان` : 'انجمن نجوم دانشگاه گیلان';
+---
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{fullTitle}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --navy: #0b1730;
+    --navy-2: #12213f;
+    --line: #22365f;
+    --text: #16233f;
+    --muted: #6b7a99;
+    --accent: #2f6fe0;
+    --bg: #f4f6fb;
+  }
+  body {
+    margin: 0;
+    font-family: 'Vazirmatn', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  a { color: var(--accent); text-decoration: none; }
+</style>
